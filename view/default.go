@@ -74,6 +74,10 @@ func (v DefaultView) Pages() []int {
 		end = length
 	}
 
+	if end >= length {
+		end = length
+	}
+
 	for page := start; page <= end; page++ {
 		items = append(items, page)
 	}
