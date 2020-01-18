@@ -78,6 +78,11 @@ func (v DefaultView) Pages() []int {
 		end = length
 	}
 
+	if v.Paginator.Page() <= 10 {
+		start = 1
+		end = v.Paginator.PageNums()
+	}
+
 	for page := start; page <= end; page++ {
 		items = append(items, page)
 	}
